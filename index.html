@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training request - IVAO Ecuador</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="dist/flexboxgrid.min.css" />
+
+    <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+    <div class="page-content">
+        <div  id="intro-animation">
+            <img class="logo-trs" src="assets/logo_training.png" alt="Logo Ivao Ecuador">
+            <div class="loading-container">
+                <span class="circle" id="c1"></span>
+                <span class="circle" id="c2"></span>
+                <span class="circle" id="c3"></span>
+                <span class="circle" id="c4"></span>
+            </div>
+        </div>
+        <div class="main-content" id="main-content">
+            <div class="info-training" id="info-training">
+                <img src="assets/logo.png" alt="Logo de Ivao Ecuador">
+                <h1>Training Request System</h1>
+                <p>Bienvenido al sistema de solicitud de entrenamiento.
+                    El departamento de entrenamiento de IVAO Ecuador lo invita
+                    a que solicite su formación para que pueda incrementar sus niveles de conocimiento
+                    y a la vez logre acceder a nuevos rangos.
+                </p>
+                <!--<p>Los entrenamientos son dados los mejores instructores, los cuales se apoyan de la
+                    documentacion oficial de IVAO.</p>-->
+                <a href="https://ec.ivao.aero/atc/documents/IVAO%20Ecuador%20-%20Lineamientos%20para%20Ex%C3%A1menes%20ATC.pdf" target="_blank" class="btn-documents">Ver documentación </a>
+            </div>
+            <div class="form-training" id="form-training">
+                <div class="form-box">
+                    <h2>Formulario de solicitud</h2>
+                    <a href="https://ec.ivao.aero">< Ir a la página principal</a>
+                    <div class="form">
+                        <form id="form">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-section-1">
+                                        <label for="">Nombres completos:</label>
+                                        <input type="text" placeholder="Escribe tu nombre" name="name">
+            
+                                        <label for="">Correo electronico:</label>
+                                        <input type="text" placeholder="Escribe tu correo electronico" name="email">
+            
+                                        <label for="">VID:</label>
+                                        <input type="text" placeholder="Escribe tu VID" name="vid">
+
+                                        <label for="">Comentarios:</label>
+                                        <input type="text" id="text-area" name="comments" placeholder="Horarios, requerimientos, situaciones...">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-section-2">
+                                        <p>Tipo de entrenamiento:</label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <label for="pilot_img" class="option1" id="botonOne">
+                                                    <input type="radio" name="radio_option" id="pilot_img" value="pilot"><img src="assets/sombrero-de-piloto2.png" alt=""><p>Piloto</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <label for="control_img" class="option2" id="botonTwo">
+                                                    <input type="radio" name="radio_option" id="control_img" value="control"><img src="assets/torre-de-control.png" alt=""><p>Controlador</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-section-3" id="submit-section">
+                                        <p>Rango solicitado:</p>
+                                        <select name="rank_control" id="control">
+                                            <option value="no_data">Selecciona el entrenamiento</option>
+                                            <option value="AS1 - Bienvenido a IVAO">AS1 - Bienvenido a IVAO</option>
+                                            <option value="AS1 - Abriendo el control">AS1 - Abriendo el control</option>
+                                            <option value="Asx - Fraseología">Asx - Fraseología</option>
+                                            <option value="ASx - Metereología">ASx - Metereología</option>
+                                            <option value="ASx - Espacios Aereos">ASx - Espacios Aereos</option>
+                                            <option value="ASx - Gestión del Aeródromo">ASx - Gestión del Aeródromo</option>
+                                            <option value="ASx - Gestión del CTR-ATZ">ASx - Gestión del CTR-ATZ</option>
+                                            <option value="ASx - Probando el control">ASx - Probando el control</option>
+                                            <option value="ADC - Introducción">ADC - Introducción</option>
+                                            <option value="ADC - Instrucción Teórica I">ADC - Instrucción Teórica I</option>
+                                            <option value="ADC - Instrucción Teórica II">ADC - Instrucción Teórica II</option>
+                                            <option value="ADC - Instrucción Práctica I">ADC - Instrucción Práctica I</option>
+                                            <option value="ADC - Simulación Exámen">ADC - Simulación Exámen</option>
+                                            <option value="APC - Introducción">APC - Introducción</option>
+                                            <option value="APC - Sesión Teórica I">APC - Sesión Teórica I</option>
+                                            <option value="APC - Sesión Teórica II">APC - Sesión Teórica II</option>
+                                            <option value="APC - Sesión Práctica I">APC - Sesión Práctica I</option>
+                                            <option value="APC - Simulación Exámen">APC - Simulación Exámen</option>
+                                            <option value="ACC - Introducción">ACC - Introducción</option>
+                                            <option value="ACC - Sesión Teórica I">ACC - Sesión Teórica I</option>
+                                            <option value="ACC - Sesión Teórica II">ACC - Sesión Teórica II</option>
+                                            <option value="ACC - Sesión Práctica I">ACC - Sesión Práctica I</option>
+                                            <option value="ACC - Simulación Exámen">ACC - Simulación Exámen</option>
+                                        </select>
+                                        <select name="rank_pilot" id="pilot">
+                                            <option value="no_data">Selecciona el entrenamiento</option>
+                                            <option value="FS1 - Bienvenido a la Familia IVAO!">FS1 - Bienvenido a la Familia IVAO!</option>
+                                            <option value="FS1 - Primer Vuelo">FS1 - Primer Vuelo</option>
+                                            <option value="FSx - Fraseología">FSx - Fraseología</option>
+                                            <option value="FSx - Metereología">FSx - Metereología</option>
+                                            <option value="FSx - Espacios Aéreo">FSx - Espacios Aéreos</option>
+                                            <option value="FSx - Fundamentos del Vuelo">FSx - Fundamentos del Vuelo</option>
+                                            <option value="FSx - Navegación VFR">FSx - Navegación VFR</option>
+                                            <option value="FSx - Vuelo Prueba">FSx - Vuelo Prueba</option>
+                                            <option value="PP - Introducción">PP - Introducción</option>
+                                            <option value="PP - Sesión Teórica I">PP - Sesión Teórica I</option>
+                                            <option value="PP - Sesión Práctica I">PP - Sesión Práctica I</option>
+                                            <option value="PP - Simulación Exámen">PP - Simulación Exámen</option>
+                                            <option value="SPP - Introducción">SPP - Introducción</option>
+                                            <option value="SPP - Sesión Teórica I">SPP - Sesión Teórica I</option>
+                                            <option value="SPP - Sesión Práctica I">SPP - Sesión Práctica I</option>
+                                            <option value="SPP - Simulación Exámen">SPP - Simulación Exámen</option>
+                                            <option value="CP - Introducción">CP - Introducción</option>
+                                            <option value="CP - Sesión Teórica I">CP - Sesión Teórica I</option>
+                                            <option value="CP - Sesión Práctica I">CP - Sesión Práctica I</option>
+                                            <option value="CP - Simulación Exámen">CP - Simulación Exámen</option>
+                                        </select>
+                                        <button type="submit" class="button-submit" id="submit-boton">Solicitar entrenamiento</button>
+                                        <p id="confirm_request"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="last-info">
+                    <div class="last-info-box">
+                        <p>¿Necesitas más información? Contacta con un staff</p>
+                        <a href="https://chat.whatsapp.com/ExCqf9eOdmzFE1R7uKKxLC" target="_blank">Whatsapp</a>
+                        <a href="https://discord.gg/hJ3xNWVuP9" target="_blank">Discord</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        window.onload = function(){
+          const contenedor = document.getElementById("intro-animation");
+          const info_training = document.getElementById("info-training");
+          const info_form = document.getElementById("form-training");
+
+
+          setTimeout(() => {
+            contenedor.style.animation = "intro-hidden 0.5s forwards"
+            clearInterval(loadingPage)
+
+            setTimeout(() => {
+                info_training.style.animation = "content-reveal 1s forwards";
+                info_form.style.animation = "content-reveal-right 1s forwards";
+            },300)
+          },1500)
+
+
+        };
+    </script>
+
+</body>
+</html>
