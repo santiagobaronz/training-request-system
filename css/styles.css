@@ -286,12 +286,44 @@ body{
     height: 100px;
 }
 
-.form-section-2{
+
+.form-section-1-1{
     margin: 50px 20px 20px 0px;
+}
+
+.form-section-1-1 p{
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.label-type{
+    width: 85%;
+    display: block;
+    height: 25px;
+    background-color: #171b31;
+    border-radius: 5px;
+    margin-right: 30px;
+    padding: 10px 0px 10px 20px;
+    cursor: pointer;
+}
+
+.label-type input{
+    display: none;
+}
+
+.active{
+    background-color: #9a00ff !important;
+}
+
+
+
+.form-section-2{
+    margin: 30px 20px 20px 0px;
 }
 
 .form-section-2 p{
     margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .option1, .option2{
@@ -352,7 +384,7 @@ body{
     color: #fff;
     cursor: pointer;
     transition: 0.2s;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .button-submit:hover{
@@ -427,6 +459,10 @@ body{
     #intro-animation{
         width: 100%;
     }
+    .label-type{
+        font-size: 15px;
+        padding: 10px 10px 10px 10px
+    }
   }
 
   @media only screen and (max-width: 1024px) {
@@ -471,8 +507,15 @@ body{
         text-align: center;
     }
 
+    .form-section-1-1{
+        margin: 30px;
+    }
 
-    
+    .label-type{
+        width: 95%;
+        margin: 10px 0px;
+    }
+
   }
 
 
@@ -573,6 +616,11 @@ body{
 
     .last-info-box{
         height: 220px;
+    }
+
+    .label-type{
+        width: 90%;
+        margin: 10px 0px;
     }
     
   }

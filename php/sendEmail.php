@@ -4,16 +4,34 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $vid = $_POST['vid'];
 $comments = $_POST['comments'];
+$type_option = $_POST['type_option'];
 $radio_option = $_POST['radio_option'];
 $date = date('d-m-Y H:i:s');
 
-if($radio_option === 'pilot'){
-    $training = $_POST['rank_pilot'];
+if($type_option === 'training'){
+
+  if($radio_option === 'pilot'){
+    $t_selected = $_POST['rank_pilot'];
+  }else{
+    $t_selected = $_POST['rank_control'];
+  }
+
 }else{
-    $training = $_POST['rank_control'];
+
+  if($radio_option === 'pilot'){
+    $t_selected = $_POST['exam_pilot'];
+  }else{
+    $t_selected = $_POST['exam_atc'];
+  }
 }
 
-if($name === '' || $email === '' || $vid === '' || $training === ''){
+if($type_option === "training"){
+  $option_selected = "un entrenamiento ";
+}else{
+  $option_selected = "un examen ";
+}
+
+if($name === '' || $email === '' || $vid === '' || $t_selected === 'no_data'){
     echo json_encode(false);
 }else{
 
@@ -162,8 +180,8 @@ if($name === '' || $email === '' || $vid === '' || $training === ''){
             </div>
             <div class="container">
               <div class="bg-container">
-                  <h1 class="titulo-email">'.$name.' ('.$vid.') solicitó entrenamiento '.$training.'</h1>
-                  <p><strong>'.$name.'</strong> solicitó un entrenamiento '.$training.'. A continuación se describen los datos del solicitante:</p>
+                  <h1 class="titulo-email">'.$name.' ('.$vid.') '.$option_selected.' '.$t_selected.'</h1>
+                  <p><strong>'.$name.' </strong> solicitó '.$option_selected.' '.$t_selected.'. A continuación se describen los datos del solicitante:</p>
           
                 
   
@@ -171,7 +189,7 @@ if($name === '' || $email === '' || $vid === '' || $training === ''){
                     <li class="odd-text">Solicitante: '.$name.' </li>
                     <li>Correo electronico: '.$email.'. </li>
                     <li class="odd-text">VID: '.$vid.'</li>
-                    <li>Tipo de training: '.$training.'</li>
+                    <li>Tipo elegido: '.$t_selected.'</li>
                     <li class="odd-text">Comentarios: '.$comments.'</li>
                     <li>Fecha de solicitud: '.$date.'</li>
                 </ul>
@@ -191,7 +209,7 @@ if($name === '' || $email === '' || $vid === '' || $training === ''){
     ';
 
     $to = "ec-training@ivao.aero";
-    $subject = $name." solicitó un entrenamiento ".$training;
+    $subject = $name." solicitó ".$option_selected." ".$t_selected;
     $headers = 'From: Training Request System - IVAO Ecuador <ec-training@ivao.aero>' . "\r\n" .
     'Reply-To: ec-training@ivao.aero' . "\r\n" .
     'MIME-Version: 1.0' . "\r\n" .

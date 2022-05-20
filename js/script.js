@@ -26,11 +26,84 @@ let loadingPage = setInterval(() => {
 
 // Change box color when its selected and Change de select list
 
+// Select type of request
+const trainingSelect = document.getElementById("training-type-label");
+const examSelect = document.getElementById("exam-type-label");
+const typeTitle = document.getElementById("type-title");
+
+// Main buttons
 const botonOne = document.getElementById("botonOne");
 const botonTwo = document.getElementById("botonTwo");
+
+// Inputs
 const listPilot = document.getElementById("pilot");
 const listControl = document.getElementById("control");
+const listExamPilot = document.getElementById("exam-pilot");
+const listExamAtc = document.getElementById("exam-atc");
+
+// Submit button
 const submitSection = document.getElementById("submit-section");
+const submitBoton = document.getElementById("submit-boton");
+
+// Inputs
+const botonTraining = document.getElementById("training-type");
+const botonExam = document.getElementById("exam-type");
+
+// Input
+const botonSelectOne = document.getElementById("pilot_img");
+const botonSelectTwo = document.getElementById("control_img");
+
+
+// Select types
+
+trainingSelect.addEventListener("click", () => {
+    trainingSelect.classList.add("active");
+    examSelect.classList.remove("active");
+
+    typeTitle.innerHTML = "Tipo de entrenamiento:";
+    submitBoton.innerHTML = "Solicitar entrenamiento";
+
+    if(botonSelectOne.checked){
+        listControl.style.display = "none";
+        listPilot.style.display = "block";
+        listExamAtc.style.display = "none";
+        listExamPilot.style.display = "none";
+    }
+
+    if(botonSelectTwo.checked){
+        listControl.style.display = "block";
+        listPilot.style.display = "none";
+        listExamAtc.style.display = "none";
+        listExamPilot.style.display = "none";
+    }
+
+},false)
+
+examSelect.addEventListener("click", () => {
+    examSelect.classList.add("active");
+    trainingSelect.classList.remove("active");
+
+    typeTitle.innerHTML = "Tipo de examen:";
+    submitBoton.innerHTML = "Solicitar examen";
+
+    if(botonSelectOne.checked){
+        listControl.style.display = "none";
+        listPilot.style.display = "none";
+        listExamAtc.style.display = "none";
+        listExamPilot.style.display = "block";
+    }
+
+    if(botonSelectTwo.checked){
+        listControl.style.display = "none";
+        listPilot.style.display = "none";
+        listExamAtc.style.display = "block";
+        listExamPilot.style.display = "none";
+    }
+
+},false)
+
+
+// Buttons
 
 botonOne.addEventListener("change", () => {
 
@@ -39,8 +112,20 @@ botonOne.addEventListener("change", () => {
     botonTwo.style.backgroundColor  = "transparent";
     botonOne.style.backgroundColor = "#9A00FF";
 
-    listControl.style.display = "none";
-    listPilot.style.display = "block";
+    if(botonTraining.checked){
+        listControl.style.display = "none";
+        listPilot.style.display = "block";
+        listExamAtc.style.display = "none";
+        listExamPilot.style.display = "none";
+    }
+
+    if(botonExam.checked){
+        listControl.style.display = "none";
+        listPilot.style.display = "none";
+        listExamAtc.style.display = "none";
+        listExamPilot.style.display = "block";
+    }
+
 },false)
 
 botonTwo.addEventListener("change", () => {
@@ -52,9 +137,24 @@ botonTwo.addEventListener("change", () => {
 
     listPilot.style.display = "none";
     listControl.style.display = "block";
+
+    if(botonTraining.checked){
+        listControl.style.display = "block";
+        listPilot.style.display = "none";
+        listExamAtc.style.display = "none";
+        listExamPilot.style.display = "none";
+    }
+
+    if(botonExam.checked){
+        listControl.style.display = "none";
+        listPilot.style.display = "none";
+        listExamAtc.style.display = "block";
+        listExamPilot.style.display = "none";
+    }
+
 },false)
 
-// Formulario de eventos
+// Main form
 
 var form = document.getElementById("form");
 const confirm_text = document.getElementById("confirm_request");
@@ -91,7 +191,7 @@ form.addEventListener('submit', function(e){
     }, 300);
 
     var data = new FormData(form);
-    
+ 
     fetch('../php/sendEmail.php',{
         method: 'POST',
         body: data

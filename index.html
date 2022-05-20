@@ -25,9 +25,9 @@
             <div class="info-training" id="info-training">
                 <img src="assets/logo.png" alt="Logo de Ivao Ecuador">
                 <h1>Training Request System</h1>
-                <p>Bienvenido al sistema de solicitud de entrenamiento.
+                <p>Bienvenido al sistema de solicitud de entrenamiento y examenes.
                     El departamento de entrenamiento de IVAO Ecuador lo invita
-                    a que solicite su formación para que pueda incrementar sus niveles de conocimiento
+                    a que solicite su formación o examen para que pueda incrementar sus niveles de conocimiento
                     y a la vez logre acceder a nuevos rangos.
                 </p>
                 <!--<p>Los entrenamientos son dados los mejores instructores, los cuales se apoyan de la
@@ -59,8 +59,19 @@
 
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-section-1-1">
+                                        <p>Tipo de solicitud:</p>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                <label for="training-type" class="label-type active" id="training-type-label"><input type="radio" checked name="type_option" value="training" id="training-type">Entrenamiento</label>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                <label for="exam-type" class="label-type" id="exam-type-label"><input type="radio" name="type_option" value="exam" id="exam-type">Examen</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-section-2">
-                                        <p>Tipo de entrenamiento:</label>
+                                        <p id="type-title">Tipo de entrenamiento:</label>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <label for="pilot_img" class="option1" id="botonOne">
@@ -125,6 +136,18 @@
                                             <option value="CP - Sesión Práctica I">CP - Sesión Práctica I</option>
                                             <option value="CP - Simulación Exámen">CP - Simulación Exámen</option>
                                         </select>
+                                        <select name="exam_pilot" id="exam-pilot">
+                                            <option value="no_data">Selecciona el examen</option>
+                                            <option value="PP - Private Pilot">PP - Private Pilot</option>
+                                            <option value="SPP - Senior Private Pilot">SPP - Senior Private Pilot</option>
+                                            <option value="CP - Commercial Pilot">CP - Commercial Pilot</option>
+                                        </select>
+                                        <select name="exam_atc" id="exam-atc">
+                                            <option value="no_data">Selecciona el examen</option>
+                                            <option value="ADC - Aerodrome Controller">ADC - Aerodrome Controller</option>
+                                            <option value="APC - Approach Controller">APC - Approach Controller</option>
+                                            <option value="ACC - Centre Controller">ACC - Centre Controller</option>
+                                        </select>
                                         <button type="submit" class="button-submit" id="submit-boton">Solicitar entrenamiento</button>
                                         <p id="confirm_request"></p>
                                     </div>
@@ -144,7 +167,7 @@
                             </div>
                             <div id="form-sent">
                                 <img src="assets/confirm-img.png" alt="" class="loading-img">
-                                <p>Solicitud de entrenamiento enviada!</p>
+                                <p>Solicitud enviada exitosamente!</p>
                             </div>
                         </div>
                     </div>
@@ -175,8 +198,8 @@
             setTimeout(() => {
                 info_training.style.animation = "content-reveal 1s forwards";
                 info_form.style.animation = "content-reveal-right 1s forwards";
-            },300)
-          },1500)
+            },30)
+          },150)
 
 
         };
