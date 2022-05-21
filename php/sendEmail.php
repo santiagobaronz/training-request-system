@@ -204,7 +204,7 @@ if($name === '' || $email === '' || $vid === '' || $t_selected === 'no_data'){
     
     ';
 
-    $to = "santiago.baron.zuleta@ivao.aero";
+    $to = "ec-training@ivao.aero";
     $subject = $name." solicitó ".$option_selected." ".$t_selected;
     $headers = 'From: Training Request System - IVAO Ecuador <ec-training@ivao.aero>' . "\r\n" .
     'Reply-To: ec-training@ivao.aero' . "\r\n" .
