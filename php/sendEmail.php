@@ -10,25 +10,27 @@ $date = date('d-m-Y H:i:s');
 
 if($type_option === 'training'){
 
+  $option_selected = "un entrenamiento ";
+
   if($radio_option === 'pilot'){
     $t_selected = $_POST['rank_pilot'];
   }else{
     $t_selected = $_POST['rank_control'];
   }
 
-}else{
+}else if($type_option === 'exam'){
+
+  $option_selected = "un examen ";
 
   if($radio_option === 'pilot'){
     $t_selected = $_POST['exam_pilot'];
   }else{
     $t_selected = $_POST['exam_atc'];
   }
-}
 
-if($type_option === "training"){
-  $option_selected = "un entrenamiento ";
-}else{
-  $option_selected = "un examen ";
+} else {
+  $option_selected = "un examen GCA ";
+  $t_selected = $_POST['exam_atc'];
 }
 
 if($name === '' || $email === '' || $vid === '' || $t_selected === 'no_data'){
@@ -182,9 +184,7 @@ if($name === '' || $email === '' || $vid === '' || $t_selected === 'no_data'){
               <div class="bg-container">
                   <h1 class="titulo-email">'.$name.' ('.$vid.') '.$option_selected.' '.$t_selected.'</h1>
                   <p><strong>'.$name.' </strong> solicitó '.$option_selected.' '.$t_selected.'. A continuación se describen los datos del solicitante:</p>
-          
-                
-  
+
                 <ul class="details">
                     <li class="odd-text">Solicitante: '.$name.' </li>
                     <li>Correo electronico: '.$email.'. </li>
@@ -193,10 +193,6 @@ if($name === '' || $email === '' || $vid === '' || $t_selected === 'no_data'){
                     <li class="odd-text">Comentarios: '.$comments.'</li>
                     <li>Fecha de solicitud: '.$date.'</li>
                 </ul>
-  
-                
-  
-                
           
                 <div class="footer">Training request system <a href="https://training.ec.ivao.aero/">https://training.ec.ivao.aero/</a>
                 </div>
@@ -208,7 +204,7 @@ if($name === '' || $email === '' || $vid === '' || $t_selected === 'no_data'){
     
     ';
 
-    $to = "ec-training@ivao.aero";
+    $to = "santiago.baron.zuleta@ivao.aero";
     $subject = $name." solicitó ".$option_selected." ".$t_selected;
     $headers = 'From: Training Request System - IVAO Ecuador <ec-training@ivao.aero>' . "\r\n" .
     'Reply-To: ec-training@ivao.aero' . "\r\n" .

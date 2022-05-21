@@ -1,6 +1,6 @@
 # 📡 Training Request System
 
-The Training Request System is a website derived from Ivao Ecuador that provides a tool to schedule new training for pilots or air traffic controllers.
+The Training Request System is a website derived from Ivao Ecuador that provides a tool to schedule new training, exam or GCA for pilots or air traffic controllers.
 
 ## Table of Contents 📋
 - General Info
@@ -15,10 +15,7 @@ The Training Request System is a website derived from Ivao Ecuador that provides
 
 ## General Information 🙋‍♂️
 
-The project was completed in 1 week approximately. I used the IDE "Visual Studio Code" to write. The project has 5 folders (assets, css, dist, js and php) and also the index file.
-
-## Preview project 📸
-![](https://raw.githubusercontent.com/Santiago-Baron-Zuleta/training-request-system/master/assets/preview.JPG)
+The project was completed in 2 week approximately. I used the IDE "Visual Studio Code" to write. The project has 5 folders (assets, css, dist, js and php) and also the index file.
 
 ## Technologies ⚙️
 

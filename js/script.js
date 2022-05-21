@@ -29,6 +29,7 @@ let loadingPage = setInterval(() => {
 // Select type of request
 const trainingSelect = document.getElementById("training-type-label");
 const examSelect = document.getElementById("exam-type-label");
+const gcaSelect = document.getElementById("gca-type-label");
 const typeTitle = document.getElementById("type-title");
 
 // Main buttons
@@ -48,6 +49,7 @@ const submitBoton = document.getElementById("submit-boton");
 // Inputs
 const botonTraining = document.getElementById("training-type");
 const botonExam = document.getElementById("exam-type");
+const botonGca = document.getElementById("gca-type");
 
 // Input
 const botonSelectOne = document.getElementById("pilot_img");
@@ -59,6 +61,8 @@ const botonSelectTwo = document.getElementById("control_img");
 trainingSelect.addEventListener("click", () => {
     trainingSelect.classList.add("active");
     examSelect.classList.remove("active");
+    gcaSelect.classList.remove("active");
+    botonOne.classList.remove("disabled");
 
     typeTitle.innerHTML = "Tipo de entrenamiento:";
     submitBoton.innerHTML = "Solicitar entrenamiento";
@@ -82,6 +86,8 @@ trainingSelect.addEventListener("click", () => {
 examSelect.addEventListener("click", () => {
     examSelect.classList.add("active");
     trainingSelect.classList.remove("active");
+    gcaSelect.classList.remove("active");
+    botonOne.classList.remove("disabled");
 
     typeTitle.innerHTML = "Tipo de examen:";
     submitBoton.innerHTML = "Solicitar examen";
@@ -103,27 +109,54 @@ examSelect.addEventListener("click", () => {
 },false)
 
 
+gcaSelect.addEventListener("click", () => {
+    gcaSelect.classList.add("active");
+    trainingSelect.classList.remove("active");
+    examSelect.classList.remove("active");
+
+    typeTitle.innerHTML = "Tipo de GCA:";
+    submitBoton.innerHTML = "Solicitar GCA / Request GCA";
+
+    botonOne.classList.add("disabled");
+    botonOne.style.backgroundColor  = "transparent";
+    botonTwo.style.backgroundColor = "#9A00FF";
+    botonSelectTwo.checked = true;
+
+    submitSection.style.display = "block";
+
+    listControl.style.display = "none";
+    listPilot.style.display = "none";
+    listExamAtc.style.display = "block";
+    listExamPilot.style.display = "none";
+    
+
+},false)
+
+
 // Buttons
 
 botonOne.addEventListener("change", () => {
 
-    submitSection.style.display = "block";
+    if(botonGca.checked != true){
 
-    botonTwo.style.backgroundColor  = "transparent";
-    botonOne.style.backgroundColor = "#9A00FF";
+        submitSection.style.display = "block";
+        
+        botonTwo.style.backgroundColor  = "transparent";
+        botonOne.style.backgroundColor = "#9A00FF";
 
-    if(botonTraining.checked){
-        listControl.style.display = "none";
-        listPilot.style.display = "block";
-        listExamAtc.style.display = "none";
-        listExamPilot.style.display = "none";
-    }
-
-    if(botonExam.checked){
-        listControl.style.display = "none";
-        listPilot.style.display = "none";
-        listExamAtc.style.display = "none";
-        listExamPilot.style.display = "block";
+        if(botonTraining.checked){
+            listControl.style.display = "none";
+            listPilot.style.display = "block";
+            listExamAtc.style.display = "none";
+            listExamPilot.style.display = "none";
+        }
+    
+        if(botonExam.checked){
+            listControl.style.display = "none";
+            listPilot.style.display = "none";
+            listExamAtc.style.display = "none";
+            listExamPilot.style.display = "block";
+        }
     }
 
 },false)
@@ -145,12 +178,14 @@ botonTwo.addEventListener("change", () => {
         listExamPilot.style.display = "none";
     }
 
-    if(botonExam.checked){
+    if(botonExam.checked || botonGca.checked){
         listControl.style.display = "none";
         listPilot.style.display = "none";
         listExamAtc.style.display = "block";
         listExamPilot.style.display = "none";
     }
+
+    
 
 },false)
 
@@ -213,3 +248,16 @@ form.addEventListener('submit', function(e){
         });
 
 })
+
+// Responsive change
+
+const optionOne = document.getElementById("option-type1");
+const optionTwo = document.getElementById("option-type2");
+const optionThree = document.getElementById("option-type3");
+
+
+if(screen.width > 1024 && screen.width <= 1440){
+    optionOne.classList.remove("col-lg-5");
+    optionTwo.classList.remove("col-lg-3");
+    optionThree.classList.remove("col-lg-3");
+}
