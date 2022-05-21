@@ -17,6 +17,9 @@ The Training Request System is a website derived from Ivao Ecuador that provides
 
 The project was completed in 2 week approximately. I used the IDE "Visual Studio Code" to write. The project has 5 folders (assets, css, dist, js and php) and also the index file.
 
+## Preview project 📸
+![](https://raw.githubusercontent.com/Santiago-Baron-Zuleta/training-request-system/master/assets/preview.JPG)
+
 ## Technologies ⚙️
 
 - HTML5
