@@ -39,7 +39,7 @@ To install the project on your computer, you can use the "Code" button and follo
 - Write ``` git clone ``` and paste the url. As follows:
 
 ``` 
-git clone https://github.com/Santiago-Baron-Zuleta/training-request-system.git
+git clone https://github.com/santiagobaronz/training-request-system.git
 ```
 
 ### 2️⃣ Download ZIP
@@ -50,4 +50,4 @@ git clone https://github.com/Santiago-Baron-Zuleta/training-request-system.git
 
 ## Authors 🦸‍♀️
 
-- Santiago Baron Zuleta - *Project creator* [Santiago-Baron-Zuleta](https://github.com/Santiago-Baron-Zuleta)
+- Santiago Baron Zuleta - *Project creator* [Santiago-Baron-Zuleta](https://github.com/santiagobaronz)
